@@ -1,0 +1,17 @@
+div.container-fluid
+    include ./panelBlocks/cpuBlock
+    div.row.mt-3
+        div.col
+
+    div.row
+        div.col-3
+            include ./panelBlocks/memoryBlock
+        if data.hardware.battery.hasBattery
+            div.col-3
+                include ./panelBlocks/batteryBlock
+        if data.hardware.mobo
+            div.col-3
+                include ./panelBlocks/baseBlock
+        if data.hardware.network
+            div.col-3
+                include ./panelBlocks/networkBlock

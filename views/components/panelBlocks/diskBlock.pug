@@ -1,0 +1,56 @@
+div.row.mt-3
+    div.col
+        h4 #{data.disk.layout.section}
+        div.overflow-x-scroll
+            table.table.table-borderless
+                thead
+                    tr
+                        th Name
+                        th Vendor
+                        th Type
+                        th Device
+                        th Serial
+                        th Interface
+                        th Size
+                        th Temperature
+                tbody
+                    each val in data.disk.layout.stats
+                        tr
+                            td #{val.name || empty}
+                            td #{val.type || empty}
+                            td #{val.device || empty}
+                            td #{val.serialNum || empty}
+                            td #{val.interfaceType || empty}
+                            td #{val.size || empty}
+                            td #{val.temperature || empty}
+
+div.row.mt-3
+    div.col
+        h4 #{data.disk.block.section}
+        div.overflow-x-scroll
+            table.table.table-borderless
+                thead
+                    tr
+                        th Name
+                        th Type
+                        th FS Type
+                        th Model
+                        th Device
+                        th Mount
+                        th Serial
+                        th Size
+                        th Removable
+                        th Physical
+                tbody
+                    each val in data.disk.block.stats
+                        tr
+                            td #{val.name || empty}
+                            td #{val.type || empty}
+                            td #{val.fsType || empty}
+                            td #{val.model || empty}
+                            td #{val.device || empty}
+                            td #{val.mount || empty}
+                            td #{val.serial || empty}
+                            td #{val.size || empty}
+                            td #{val.removable || empty}
+                            td #{val.physical || empty}

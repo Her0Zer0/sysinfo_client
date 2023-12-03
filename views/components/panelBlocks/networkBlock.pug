@@ -1,0 +1,9 @@
+div.col
+    h4 #{data.hardware.network.section}
+    table.table.table-borderless
+        tbody
+            if data.hardware.network.nic && data.hardware.network.nic.length > 0
+                each val, key in data.hardware.network.nic[0]
+                    tr
+                        th #{key.charAt(0).toUpperCase()+key.substring(1)}:
+                        td #{val}

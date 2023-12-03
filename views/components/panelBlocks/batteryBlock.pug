@@ -1,0 +1,8 @@
+div.col
+    h4 #{data.hardware.battery.section}
+    table.table.table-borderless
+        tbody
+            each val, key in data.hardware.battery.stats
+                tr
+                    th #{key.charAt(0).toUpperCase()+key.substring(1)}:
+                    td #{val}

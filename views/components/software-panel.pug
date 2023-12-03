@@ -1,0 +1,16 @@
+div.container-fluid
+    div.row
+        div.col
+            h4 #{data.software.section}
+                div.overflow-x-scroll
+                    table.table.table-borderless
+                        thead
+                            tr
+                                th App
+                                th Version
+                        tbody
+                            each val,key in data.software.versions
+                                if val !== ''
+                                    tr
+                                        td #{key}
+                                        td #{val}

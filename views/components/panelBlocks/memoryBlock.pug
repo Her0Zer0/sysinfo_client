@@ -1,0 +1,8 @@
+div.col
+    h4 #{data.hardware.memory.section}
+    table.table.table-borderless
+        tbody
+            each val, key in data.hardware.memory.mem
+                tr
+                    th #{key.charAt(0).toUpperCase()+key.substring(1)}:
+                    td #{val}

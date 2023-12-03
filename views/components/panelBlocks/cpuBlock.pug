@@ -1,0 +1,62 @@
+
+div.row.mt-3
+    div.col
+        h4 #{data.hardware.cpu.section}
+
+div.row
+    div.col
+        table.table.table-borderless
+            tbody
+                tr
+                    th Vendor
+                    td #{data.hardware.cpu.model.vendor || empty}
+                tr
+                    th Brand
+                    td #{data.hardware.cpu.model.brand || empty}
+                tr
+                    th Model
+                    td #{data.hardware.cpu.model.model || empty}
+                tr
+                    th Family
+                    td #{data.hardware.cpu.model.family || empty}
+                tr
+                    th Socket
+                    td #{data.hardware.cpu.model.socket || empty}
+                tr
+                    th Manufacturer
+                    td #{data.hardware.cpu.model.manufacturer || empty}
+
+    div.col
+        table.table.table-borderless
+            tbody
+                tr
+                    th Cores
+                    td
+                        ul.list-unstyled
+                            each val, key in data.hardware.cpu.core
+                                li #{key.charAt(0).toUpperCase() + key.substring(1)}: #{val || empty}
+                tr
+                    th Cache
+                    td
+                        ul.list-unstyled
+                            each val, key in data.hardware.cpu.cache
+                                li #{key}: #{val.value} #{val.size}
+                tr
+                    th Virtualization:
+                    td #{data.hardware.cpu.virtualization || false}
+
+    div.col
+        table.table.table-borderless
+            tbody
+                tr
+                    th Speed
+                    td
+                        ul.list-unstyled
+                            each val, key in data.hardware.cpu.speed
+                                li #{key.charAt(0).toUpperCase() + key.substring(1)}: #{val || empty}
+
+div.row
+    div.col
+        p
+            strong Flags
+        p #{data.hardware.cpu.model.flags}

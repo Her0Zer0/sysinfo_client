@@ -1,0 +1,11 @@
+div.sidebar
+    ul.list-group.list-group-flush
+        each element in data.menu
+            li.list-group-item.text-center(
+                id=element.id
+                aria-label=element.help
+                data-frame-ref=element.ref
+                data-bs-toggle="tooltip"
+                data-bs-title=element.help
+                data-bs-placement="right"
+                ) #{element.label}

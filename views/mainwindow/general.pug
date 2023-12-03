@@ -1,0 +1,59 @@
+extends base
+
+block content
+
+    div.container-fluid
+        div.row
+            div.col
+                h3=title
+                h5=subtitle
+            div.col.text-end
+                p
+                    small
+                        strong System Time:
+                        span  #{data.basic.time}
+                p
+                    small
+                        strong Up Time:
+                        span  #{data.basic.upTime} Minutes
+    div.container-fluid
+        ul.nav.nav-underline
+            li.nav-item
+                div.nav-link.active(
+                    id="hardware-tab" data-bs-toggle="tab"
+                    data-bs-target="#hardware-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="hardware-pane"
+                    aria-selected="true"
+                    ) Hardware
+
+            li.nav-item
+                div.nav-link(
+                    id="disks-tab" data-bs-toggle="tab"
+                    data-bs-target="#disk-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="disk-pane"
+                    aria-selected="false"
+                ) Disks
+            li.nav-item
+                div.nav-link(
+                    id="software-tab" data-bs-toggle="tab"
+                    data-bs-target="#software-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="software-pane"
+                    aria-selected="false"
+                ) Software
+        - let empty = '(empty)';
+        div.tab-content(id="tab-content")
+            div.tab-pane.fade.show.active(id="hardware-pane" role="tabpanel" aria-labelledby="hardware-tab" tabindex="0")
+                include ../components/hardware-panel
+            div.tab-pane.fade(id="disk-pane" role="tabpanel" aria-labelledby="disk-tab" tabindex="0")
+                include ../components/disk-panel
+            div.tab-pane.fade(id="software-pane" role="tabpanel" aria-labelledby="software-tab" tabindex="0")
+                include ../components/software-panel
+
+    include  ../components/scripts
+    script(type="text/javascript" src="/javascripts/general.js")

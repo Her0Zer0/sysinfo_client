@@ -1,0 +1,36 @@
+extends base
+block content
+
+    div.container-fluid
+        div.visually-hidden.alert.alert-info(id="settingsAlert") some info
+        div.row
+            div.col-3
+                form.form(id="appSettingsForm")
+                    label App Title:
+                        input.form-control(
+                            id="app_title"
+                            type="text"
+                            placeholder="System Information"
+                            name="app_title"
+                            value=data.app_title
+                            )
+                    label Port:
+                        input.form-control(
+                            id="app_port"
+                            type="number"
+                            placeholder="8080"
+                            name="app_port"
+                            value=data.app_port
+                            )
+                    label Theme:
+                        select.form-select(
+                            id="app_theme"
+                            name="app_theme"
+                            )
+                            optgroup
+                                option(id="light" value="light" selected=data.app_theme==="light") Light (default)
+                                option(id="darkula" value="darkula" selected=data.app_theme==="darkula") Darkula
+                    div.text-end
+                        button.btn.btn-outline-primary(id="appSettingsSaveBtn") Save
+
+    script(type="text/javascript" src="/javascripts/settings.js")

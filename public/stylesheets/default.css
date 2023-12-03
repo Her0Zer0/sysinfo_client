@@ -1,0 +1,17 @@
+:root{
+    --max-header-height: 50px;
+    --sidebar-width: 250px;
+    --mainwindow-width: calc(100% - var(--sidebar-width));
+    --primary-color: #fff;
+    --secondary-color: #ccc;
+    --primary-font-color: #000;
+    --primary-link-color: #00B7FF;
+    --primary-dark-color: #05092b;
+    --primary-dark-font-color: #e2e2e2;
+    --border-primary: var(--secondary-color);
+
+    /*Bootstrap Overrides*/
+    --nlc-spinner-width: 5rem;
+    --nlc-spinner-height: 5rem;
+    --nlc-spinner-border-width: .5em;
+}

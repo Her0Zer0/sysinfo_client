@@ -1,0 +1,54 @@
+@import "default.css";
+
+body.darkula{
+    --primary-color: var(--primary-dark-color);
+    --primary-font-color: var(--primary-dark-font-color);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
+}
+
+.table > :not(caption) > * > *{
+    background-color: var(--primary-color);
+    color: var(--primary-font-color);
+}
+
+.nav-underline .nav-link.active{
+    color: var(--primary-font-color);
+}
+
+body.loader-page .loader{
+    height: calc(100vh - var(--max-header-height));
+}
+
+body.loader-page .spinner-border{
+    --bs-spinner-width: var(--nlc-spinner-width);
+    --bs-spinner-height: var(--nlc-spinner-height);
+    --bs-spinner-border-width: var(--nlc-spinner-border-width);
+    border-color: var(--border-primary);
+    border-right-color: transparent;
+}
+
+.subject-frame-wrapper{
+    position: relative;
+    padding: 8px;
+}
+
+dt{
+    font-size: .85rem;
+}
+dd{
+    font-size: .75rem;
+    padding-left: 8px;
+}
+
+.card.min-h-100{
+    min-height: 270px;
+}
+
