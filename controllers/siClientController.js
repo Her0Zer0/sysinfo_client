@@ -1,5 +1,5 @@
 const {SiClient, SiMainContent} = require('../services/client/SiClient')
-const fs = require('fs/promises')
+const fs = require('fs').promises
 const {
     general,
 } = require("../services/api");
